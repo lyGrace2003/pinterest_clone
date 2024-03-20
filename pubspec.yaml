@@ -25,3 +25,8 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  assets:
+    - lib/assets/icons/Home.svg
+    - lib/assets/icons/Search.svg
+    - lib/assets/icons/Create.svg
+    - lib/assets/icons/Inbox.svg
