@@ -28,26 +28,28 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
  Widget build(BuildContext context) {
     return Positioned(
       right: 0,
-      left: 0,
       top: 0,
       child: Row(
         children: [
           Container(
-            height: 140,
+            height: 80,
             width: MediaQuery.of(context).size.width,
             color: const Color(0xFF000000),
-            child: Row(
-              children: [
-                _navItems('Home', 'lib/assets/icons/Home.svg', _selectedItem == 'home', () => setState(() => _selectedItem = 'home'),),
-                const SizedBox(width: 75,),
-                _navItems('Search', 'lib/assets/icons/Search.svg', _selectedItem == 'search', () => setState(() => _selectedItem = 'search'),),
-                const SizedBox(width: 75,),
-                _navItems('Create', 'lib/assets/icons/Create.svg', _selectedItem == 'create', () => setState(() => _selectedItem = 'create'),),
-                const SizedBox(width: 75,),
-                _navItems('Inbox', 'lib/assets/icons/Inbox.svg', _selectedItem == 'inbox', () => setState(() => _selectedItem = 'inbox'),),
-                const SizedBox(width: 75,),
-                _navItems('Saved', 'iconPath', _selectedItem == 'saved', () => setState(() => _selectedItem = 'saved'),)
-              ],
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20,5,20,5),
+              child: Row(
+                children: [
+                  _navItems('Home', 'lib/assets/icons/Home.svg', _selectedItem == 'home', () => setState(() => _selectedItem = 'home'),),
+                  const Spacer(),
+                  _navItems('Search', 'lib/assets/icons/Search.svg', _selectedItem == 'search', () => setState(() => _selectedItem = 'search'),),
+                  const Spacer(),
+                  _navItems('Create', 'lib/assets/icons/Create.svg', _selectedItem == 'create', () => setState(() => _selectedItem = 'create'),),
+                  const Spacer(),
+                  _navItems('Inbox', 'lib/assets/icons/Inbox.svg', _selectedItem == 'inbox', () => setState(() => _selectedItem = 'inbox'),),
+                  const Spacer(),
+                  _navItems('Saved', 'iconPath', _selectedItem == 'saved', () => setState(() => _selectedItem = 'saved'),)
+                ],
+              ),
             ),
           ),
         ],
@@ -59,25 +61,25 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 80,
-        height: 80,
+        width: 50,
+        height: 50,
         child: Column(
           children: [
             SizedBox(
-              width: 40,
-              height: 40,
+              width: 30,
+              height: 30,
               child: SvgPicture.asset(iconPath, color: isSelected
                     ? const Color(0xFFFFFFFF)
                     : const Color(0xFFA3A3A3),),
             ),
-            const SizedBox(height: 5,),
+            const SizedBox(height: 2.5,),
             Text(
               title, 
               style: GoogleFonts.inter(
                  color: isSelected
                     ? const Color(0xFFFFFFFF)
                     : const Color(0xFFA3A3A3),
-                fontSize: 22,
+                fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
             )
