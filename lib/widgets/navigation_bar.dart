@@ -27,8 +27,8 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
  @override
  Widget build(BuildContext context) {
     return Positioned(
-      right: 0,
-      top: 0,
+      left: 0,
+      bottom: 0,
       child: Row(
         children: [
           Container(
@@ -36,7 +36,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
             width: MediaQuery.of(context).size.width,
             color: const Color(0xFF000000),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20,5,20,5),
+              padding: const EdgeInsets.fromLTRB(20,0,20,0),
               child: Row(
                 children: [
                   _navItems('Home', 'lib/assets/icons/Home.svg', _selectedItem == 'home', () => setState(() => _selectedItem = 'home'),),
@@ -47,7 +47,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
                   const Spacer(),
                   _navItems('Inbox', 'lib/assets/icons/Inbox.svg', _selectedItem == 'inbox', () => setState(() => _selectedItem = 'inbox'),),
                   const Spacer(),
-                  _navItems('Saved', 'iconPath', _selectedItem == 'saved', () => setState(() => _selectedItem = 'saved'),)
+                  _navItems('Saved', 'NULL', _selectedItem == 'saved', () => setState(() => _selectedItem = 'saved'),)
                 ],
               ),
             ),
@@ -58,6 +58,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
  }
 
  Widget _navItems(String title, String iconPath, bool isSelected, VoidCallback onTap) {
+  if (iconPath == 'NULL') {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
@@ -65,20 +66,21 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
         height: 50,
         child: Column(
           children: [
-            SizedBox(
-              width: 30,
-              height: 30,
-              child: SvgPicture.asset(iconPath, color: isSelected
-                    ? const Color(0xFFFFFFFF)
-                    : const Color(0xFFA3A3A3),),
+            Container(
+              width: 22,
+              height: 22,
+              decoration: BoxDecoration(
+                color: const Color(0xFFA3A3A3),
+                borderRadius: BorderRadius.circular(100),
+              ),
             ),
             const SizedBox(height: 2.5,),
             Text(
               title, 
               style: GoogleFonts.inter(
-                 color: isSelected
-                    ? const Color(0xFFFFFFFF)
-                    : const Color(0xFFA3A3A3),
+                color: isSelected
+                  ? const Color(0xFFFFFFFF)
+                  : const Color(0xFFA3A3A3),
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -87,6 +89,38 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget>  {
         ),
       ),
     );
- }
+  } else {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 50,
+        height: 50,
+        child: Column(
+          children: [
+            SizedBox(
+              width: 22,
+              height: 22,
+              child: SvgPicture.asset(iconPath, color: isSelected
+                    ? const Color(0xFFFFFFFF)
+                    : const Color(0xFFA3A3A3),),
+            ),
+            const SizedBox(height: 2.5,),
+            Text(
+              title, 
+              style: GoogleFonts.inter(
+                color: isSelected
+                  ? const Color(0xFFFFFFFF)
+                  : const Color(0xFFA3A3A3),
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
  
 }

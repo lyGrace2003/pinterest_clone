@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinterest_clone/widgets/view_save.dart';
 // import 'package:pinterest_clone/utils/size_config.dart';
 
 import '../widgets/navigation_bar.dart';
@@ -14,14 +15,12 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         children: [
-          Container(
-            height: 50,
-          ),
-          const Spacer(),
-          const NavigationBarWidget(selectedItem: 'home',),
+          Spacer(),
+          ViewSaveWidget(),
+          NavigationBarWidget(selectedItem: 'home',),
         ],
       ),
     );
