@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinterest_clone/widgets/search_bar.dart';
 import 'package:pinterest_clone/widgets/view_save.dart';
 // import 'package:pinterest_clone/utils/size_config.dart';
 
@@ -18,7 +19,10 @@ class _LandingPageState extends State<LandingPage> {
     return const Scaffold(
       body: Column(
         children: [
+
           Spacer(),
+          SignUpSearchBarWidget(forWhatPurpose: 'Password',),
+          SignUpSearchBarWidget(forWhatPurpose: 'Email',),
           ViewSaveWidget(),
           NavigationBarWidget(selectedItem: 'home',),
         ],
@@ -26,3 +30,5 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 }
+
+

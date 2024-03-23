@@ -3,19 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
-class ViewSaveWidget extends StatefulWidget {
+class ViewSaveWidget extends StatelessWidget {
   const ViewSaveWidget({super.key});
 
-
-  @override
-  // ignore: library_private_types_in_public_api
-  _ViewSaveWidgetState createState() => _ViewSaveWidgetState();
-}
-
-class _ViewSaveWidgetState extends State<ViewSaveWidget>  {
 
  @override
  Widget build(BuildContext context) {
@@ -85,5 +76,4 @@ class _ViewSaveWidgetState extends State<ViewSaveWidget>  {
       ),
     );
  }
-
 }

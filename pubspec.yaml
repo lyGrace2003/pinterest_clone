@@ -33,3 +33,6 @@ flutter:
     - lib/assets/icons/Inbox.svg
     - lib/assets/icons/Heart.svg
     - lib/assets/icons/Upload.svg
+    - lib/assets/icons/Blind.svg
+    - lib/assets/icons/Blind.png
+    - lib/assets/icons/Eye.png
