@@ -13,9 +13,10 @@ dependencies:
 
 
   cupertino_icons: ^1.0.6
-  google_fonts: 6.1.0
+  google_fonts: ^6.2.1
   flutter_svg: ^2.0.9
   device_preview: ^1.1.0
+  auto_scroll: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -36,3 +37,14 @@ flutter:
     - lib/assets/icons/Blind.svg
     - lib/assets/icons/Blind.png
     - lib/assets/icons/Eye.png
+    - lib/assets/pictures/log-in/1_1.png
+    - lib/assets/pictures/log-in/1_2.png
+    - lib/assets/pictures/log-in/1_3.png
+    - lib/assets/pictures/log-in/2_1.png
+    - lib/assets/pictures/log-in/2_2.png
+    - lib/assets/pictures/log-in/2_3.png
+    - lib/assets/pictures/log-in/3_1.png
+    - lib/assets/pictures/log-in/3_2.png
+    - lib/assets/pictures/log-in/3_3.png
+    - lib/assets/pictures/log-in/3_4.png
+    
