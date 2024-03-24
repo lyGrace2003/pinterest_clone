@@ -21,3 +21,30 @@ class MyApp extends StatelessWidget {
     }
   }
   
+
+
+// void main() => runApp(
+//     DevicePreview(
+//       enabled: !kReleaseMode,
+//       builder: (context) => const MyApp(),
+//     ),
+//   );
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       // ignore: deprecated_member_use
+//       useInheritedMediaQuery: true,
+//       locale: DevicePreview.locale(context),
+//       builder: DevicePreview.appBuilder,
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primaryColor: const Color(0xFFFCFCFC),
+//       ),
+//       home: const LandingPage(),
+//     );
+//   }
+// }

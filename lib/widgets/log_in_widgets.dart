@@ -25,7 +25,6 @@
       'lib/assets/pictures/log-in/3_1.png',
       'lib/assets/pictures/log-in/3_2.png',
       'lib/assets/pictures/log-in/3_3.png',
-      'lib/assets/pictures/log-in/3_4.png',
     ];
 
     @override
@@ -60,9 +59,9 @@
                 decoration: BoxDecoration(
                   color: const Color(0xFF000000),
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: const Color(0xFFFFFFFF), width: 2),
                   image: DecorationImage(
                     image: AssetImage(images[index]),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
