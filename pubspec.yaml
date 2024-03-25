@@ -37,6 +37,8 @@ flutter:
     - lib/assets/icons/Blind.svg
     - lib/assets/icons/Blind.png
     - lib/assets/icons/Eye.png
+    - lib/assets/icons/Apple.png
+    - lib/assets/icons/Close.png
     - lib/assets/pictures/log-in/1_1.png
     - lib/assets/pictures/log-in/1_2.png
     - lib/assets/pictures/log-in/1_3.png

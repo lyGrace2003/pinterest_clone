@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinterest_clone/widgets/buttons.dart';
 import '../widgets/log_in_widgets.dart';
-// import '../widgets/navigation_bar.dart';
-// import '../widgets/search_bar.dart';
-// import '../widgets/view_save.dart';
+
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -13,24 +11,6 @@ class LandingPage extends StatefulWidget {
   State<LandingPage> createState() => _LandingPageState();
 }
 
-// class _LandingPageState extends State<LandingPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const SafeArea(
-//       child: Scaffold(
-//         body: Column(
-//           children: [
-//             Spacer(),
-//             SignUpSearchBarWidget(forWhatPurpose: 'Password'),
-//             SignUpSearchBarWidget(forWhatPurpose: 'Email'),
-//             ViewSaveWidget(),
-//             NavigationBarWidget(selectedItem: 'home')
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class _LandingPageState extends State<LandingPage> {
   final ScrollController _scrollController1 = ScrollController();
@@ -88,10 +68,10 @@ class _LandingPageState extends State<LandingPage> {
               ],
             ),
             Positioned(
-              bottom: 250,
+              bottom: 260,
               child: Container(
-                  width: 430,
-                  height: 98,
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: const Alignment(0.00, -1.00),
@@ -101,88 +81,63 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
             ),
-             Positioned(
-              left: 160,
-              bottom: 250,
-              child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('lib/assets/logo.png'),
-                            fit: BoxFit.cover,
+            Positioned(
+              bottom: 0,
+              child: Center(
+                child: Container(
+                  height: 265,
+                  width: MediaQuery.of(context).size.width,
+                  color: const Color(0xFF000000),
+                  child: SizedBox(             
+                    child: Column( 
+                      children: [
+                        const Spacer(),
+                        Text(
+                          'Welcome To Pinterest', 
+                          style: GoogleFonts.inter(
+                            color: const Color(0xFFEFEFEF),
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
-            ),
-            Positioned(
-              left: 40,
-              bottom: 100,
-              child: Column(
-                children: [
-                  Text(
-                    'Welcome To Pinterest', 
-                    style: GoogleFonts.inter(
-                      color: const Color(0xFFEFEFEF),
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Container(
-                    width: 330,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFFE70125)
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Sign up', 
-                        style: GoogleFonts.inter(
-                          color: const Color(0xFFEFEFEF),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 8,),
-                  Container(
-                    width: 330,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFFFFFFFF)
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Log in', 
-                        style: GoogleFonts.inter(
-                          color: const Color(0xFF000000),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              left: 30,
-              bottom: 50,
-              child: SizedBox(
-                      width: 380,
-                      height: 30,
-                       child: Text(
-                            'By continuing, you agree to Pinterest’s Terms of Service and acknowledge you’ve read our Privacy Policy.', 
-                            style: GoogleFonts.inter(
+                        const SizedBox(height: 30,),
+                        const ButtonWidget(text: 'Sign up', textColor: 'white', buttonColor: 'red'),
+                        const SizedBox(height: 6,),
+                        const ButtonWidget(text: 'Log in', textColor: 'black', buttonColor: 'white'),
+                        const SizedBox(height: 15,),
+                        SizedBox(
+                          width: 380,
+                          height: 30,
+                          child: Text(
+                            'By continuing, you agree to Pinterest’s Terms of Service and acknowledge you’ve read our Privacy Policy.',
+                            style:  GoogleFonts.inter(
                               color: const Color(0xFFEFEFEF),
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
+                            textAlign: TextAlign.center,
                           ),
-                     ),
+                        ),
+                        const SizedBox(height: 20,),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              left: (MediaQuery.of(context).size.width/2)-50,
+              bottom: 240,
+              child: Container(
+                height: 100,
+                width: 100,
+                  decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('lib/assets/logo.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
