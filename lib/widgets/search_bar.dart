@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpSearchBarWidget extends StatefulWidget {
@@ -114,5 +115,80 @@ class _SignUpSearchBarWidgetState extends State<SignUpSearchBarWidget> {
         ),
       );
     }
+  }
+}
+
+
+class LogInPassWord extends StatefulWidget {
+  const LogInPassWord({Key? key}) : super(key: key);
+
+  @override
+  State<LogInPassWord> createState() => _LogInPassWordState();
+}
+
+class _LogInPassWordState extends State<LogInPassWord> {
+  TextEditingController _controller = TextEditingController();
+  bool _isContainerClicked = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 372,
+      height: 30,
+      child: Row(
+        children: [
+          const SizedBox(width: 5,),
+          SizedBox(
+            width: 340,
+            child: TextField(
+              style: GoogleFonts.inter(
+                          color: const Color(0xFFFFFFFF),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                        ),
+                         decoration: InputDecoration(
+                            hintText: 'Enter your password',
+                            hintStyle: GoogleFonts.inter(
+                              color: const Color(0xFFFFFFFF),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            border: InputBorder.none,
+                            
+                          ),
+                          obscureText: !_isContainerClicked, 
+            ),
+          ),
+          const Spacer(),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isContainerClicked = !_isContainerClicked;
+              });
+            },
+            child: Container(
+              width: 25,
+              height: 25,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    _isContainerClicked
+                        ? 'lib/assets/icons/Eye.png' 
+                        : 'lib/assets/icons/Blind.png',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

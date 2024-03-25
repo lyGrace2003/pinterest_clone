@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/widgets/navigation_bar.dart';
+import '../../widgets/navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

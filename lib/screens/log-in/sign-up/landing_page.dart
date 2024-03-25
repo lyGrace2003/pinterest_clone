@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinterest_clone/widgets/buttons.dart';
 import '../../../widgets/log_in_widgets.dart';
+import 'log-in_page.dart';
 
 
 class LandingPage extends StatefulWidget {
@@ -103,7 +105,11 @@ class _LandingPageState extends State<LandingPage> {
                         const SizedBox(height: 30,),
                         const ButtonWidget(text: 'Sign up', textColor: 'white', buttonColor: 'red'),
                         const SizedBox(height: 6,),
-                        const ButtonWidget(text: 'Log in', textColor: 'black', buttonColor: 'white'),
+                        GestureDetector(
+                          onTap: (){
+                            _bottomSheet(context);
+                          },
+                          child: const ButtonWidget(text: 'Log in', textColor: 'black', buttonColor: 'white')),
                         const SizedBox(height: 15,),
                         SizedBox(
                           width: 380,
@@ -144,4 +150,19 @@ class _LandingPageState extends State<LandingPage> {
       ),
     );
   }
+}
+
+
+void _bottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    builder: (BuildContext bc) {
+      return SizedBox(
+        height: MediaQuery.of(context).size.height * .90,
+        width: MediaQuery.of(context).size.width,
+        child: const LogInPage(),
+      );
+    },
+  );
 }

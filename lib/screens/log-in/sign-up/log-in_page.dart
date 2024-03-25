@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinterest_clone/widgets/search_bar.dart';
 
 import '../../../widgets/buttons.dart';
+import 'landing_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -13,10 +16,10 @@ class LogInPage extends StatefulWidget {
 class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: const Color(0xFF000000),
-        body: Center(
+    return Scaffold(
+      body: Center(
+        child: Container(
+          color: const Color(0xFF000000),
           child: Column(
             children: [
               Container(
@@ -32,12 +35,19 @@ class _LogInPageState extends State<LogInPage> {
                 child: Row(
                   children: [
                     const SizedBox(width: 25,),
-                    Container(
-                      width: 34,
-                      height: 34,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('lib/assets/icons/Close.png'))
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => const LandingPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 34,
+                        height: 34,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('lib/assets/icons/Close.png'))
+                        ),
                       ),
                     ),
                     const SizedBox(width: 120,),
@@ -82,20 +92,29 @@ class _LogInPageState extends State<LogInPage> {
                   const Spacer()
                 ],
               ),
+              const SizedBox(height: 15,),
               Row(
                 children: [
                   const SizedBox(width: 25,),
                   SizedBox(
                     width: 372,
                     height: 30,
-                    child: Text(
-                    'Enter your email',
-                    style: GoogleFonts.inter(
+                    child: TextField(
+                      style: GoogleFonts.inter(
                         color: const Color(0xFFFFFFFF),
                         fontSize: 25,
                         fontWeight: FontWeight.w700,
                       ),
-                  ),
+                      decoration: InputDecoration(
+                        hintText: 'Enter your email address',
+                        hintStyle: GoogleFonts.inter(
+                          color: const Color(0xFFFFFFFF),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    )
                   ),
                   const Spacer()
                 ],
@@ -115,22 +134,21 @@ class _LogInPageState extends State<LogInPage> {
                   const Spacer(),
                 ],
               ),
+              const SizedBox(height: 15,),
+              const LogInPassWord(),
+              const SizedBox(height: 30,),
               Row(
                 children: [
                   const SizedBox(width: 25,),
-                  SizedBox(
-                    width: 372,
-                    height: 30,
-                    child: Text(
-                    'Enter your password',
+                  Text(
+                    'Password',
                     style: GoogleFonts.inter(
                         color: const Color(0xFFFFFFFF),
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                       ),
                   ),
-                  ),
-                  const Spacer()
+                  const Spacer(),
                 ],
               ),
               const SizedBox(height: 40,),
@@ -156,7 +174,7 @@ class _LogInPageState extends State<LogInPage> {
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }
