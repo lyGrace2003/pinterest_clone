@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinterest_clone/widgets/buttons.dart';
-import '../widgets/log_in_widgets.dart';
+import '../../../widgets/log_in_widgets.dart';
 
 
 class LandingPage extends StatefulWidget {

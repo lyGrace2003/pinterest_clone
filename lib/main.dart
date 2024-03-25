@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/login-sign%20up/log-in_page.dart';
-import 'login-sign up/landing_page.dart';
+import 'package:pinterest_clone/screens/navigation_bar/home_page.dart';
+
+import 'screens/log-in/sign-up/log-in_page.dart';
+import 'screens/log-in/sign-up/landing_page.dart';
 
 
 void main() {
