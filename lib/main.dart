@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinterest_clone/screens/splash_screen.dart';
 
 import 'screens/log-in/sign-up/log-in_page.dart';
 import 'screens/log-in/sign-up/landing_page.dart';
