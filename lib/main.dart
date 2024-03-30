@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/screens/main_screens/home_page.dart';
-import 'package:pinterest_clone/screens/splash_screen.dart';
 import 'package:pinterest_clone/screens/locations.dart';
-
-import 'screens/log-in/sign-up/log-in_page.dart';
-import 'screens/log-in/sign-up/landing_page.dart';
-
+import 'package:pinterest_clone/screens/main_screens/search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,14 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: const Color(0xFFFCFCFC),
-        ),
-        home: const TestPage(),
-      );
-    }
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: const Color(0xFFFCFCFC),
+      ),
+      //home: const TestPage(),
+      home: const SearchPage(),
+    );
   }
+}
   
 
 
