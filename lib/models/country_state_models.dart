@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final countryStateModel = countryStateModelFromJson(jsonString);
-
 import 'dart:convert';
 
 CountryStateModel countryStateModelFromJson(String str) => CountryStateModel.fromJson(json.decode(str));

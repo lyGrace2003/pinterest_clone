@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinterest_clone/screens/log-in/sign-up/landing_page.dart';
 import 'package:pinterest_clone/widgets/buttons.dart';
 
-import '../models/country_state_models.dart' as cs_model;
-import '../models/country_state_repo.dart';
+import '../../../../models/country_state_models.dart' as cs_model;
+import '../../../../models/country_state_repo.dart';
 
-class TestPage extends StatefulWidget {
-  const TestPage({Key? key}) : super(key: key);
+class SignUpLocations extends StatefulWidget {
+  const SignUpLocations({super.key});
 
   @override
-  State<TestPage> createState() => _TestPageState();
+  State<SignUpLocations> createState() => _SignUpLocationsState();
 }
 
-class _TestPageState extends State<TestPage> {
+class _SignUpLocationsState extends State<SignUpLocations> {
   final CountryStateCityRepo _countryStateCityRepo = CountryStateCityRepo();
 
   List<String> countries = [];
@@ -47,6 +48,7 @@ class _TestPageState extends State<TestPage> {
       backgroundColor: const Color(0xFF000000),
       body: Stack(
         children: [
+          const SizedBox(height: 50,),
           Center(
             child: !isDataLoaded
                 ? const CircularProgressIndicator()
@@ -120,9 +122,9 @@ class _TestPageState extends State<TestPage> {
           const Positioned(
             left: 0,
             right: 0,
-            bottom: 10,
+            bottom: 20,
             child: Center(
-              child: ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red'),
+              child: ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red', nextPage: LandingPage(),),
             ),
           ),
         ],

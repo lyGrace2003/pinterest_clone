@@ -1,19 +1,72 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ButtonWidget extends StatefulWidget {
   final String text;
   final String textColor;
   final String buttonColor;
+  final Widget nextPage;
 
-  const ButtonWidget({super.key, required this.text, required this.textColor, required this.buttonColor});
+  const ButtonWidget({super.key, required this.text, required this.textColor, required this.buttonColor, required this.nextPage});
 
   @override
   State<ButtonWidget> createState() => _ButtonWidgetState();
 }
 
 class _ButtonWidgetState extends State<ButtonWidget> {
+  late Color _textColor;
+  late Color _buttonColor;
+  @override
+  void initState() {
+    super.initState();
+    _buttonColor = widget.buttonColor == 'red' ? const Color(0xFFE70125) : const Color(0xFFFFFFFF);
+    _textColor = widget.textColor == 'black' ? const Color(0xFF000000) : const Color(0xFFFFFFFF);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+         Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => widget.nextPage),
+        );
+      },
+      child: Container(
+        width: 380,
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: _buttonColor,
+        ),
+        child: Center(
+          child: Text(
+            widget.text,
+            style: GoogleFonts.inter(
+              color: _textColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class LandingPageButtonWidget extends StatefulWidget {
+  final String text;
+  final String textColor;
+  final String buttonColor;
+
+  const LandingPageButtonWidget({super.key, required this.text, required this.textColor, required this.buttonColor});
+
+  @override
+  State<LandingPageButtonWidget> createState() => _LandingPageButtonWidgetState();
+}
+
+class _LandingPageButtonWidgetState extends State<LandingPageButtonWidget> {
   late Color _textColor;
   late Color _buttonColor;
   @override

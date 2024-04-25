@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinterest_clone/screens/log-in/sign-up/sign-up-details/email.dart';
 import 'package:pinterest_clone/widgets/buttons.dart';
 import '../../../widgets/log_in_widgets.dart';
 import 'log-in_page.dart';
+import 'sign-up_page.dart';
 
 
 class LandingPage extends StatefulWidget {
@@ -103,13 +106,20 @@ class _LandingPageState extends State<LandingPage> {
                           ),
                         ),
                         const SizedBox(height: 30,),
-                        const ButtonWidget(text: 'Sign up', textColor: 'white', buttonColor: 'red'),
+                        GestureDetector(
+                          onTap: (){
+                             Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const SignUpEmail()),
+                            );
+                          },
+                          child: const LandingPageButtonWidget(text: 'Sign up', textColor: 'white', buttonColor: 'red')),
                         const SizedBox(height: 6,),
                         GestureDetector(
                           onTap: (){
                             _bottomSheet(context);
                           },
-                          child: const ButtonWidget(text: 'Log in', textColor: 'black', buttonColor: 'white')),
+                          child: const LandingPageButtonWidget(text: 'Log in', textColor: 'black', buttonColor: 'white')),
                         const SizedBox(height: 15,),
                         SizedBox(
                           width: 380,

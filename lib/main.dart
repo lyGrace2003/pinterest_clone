@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/screens/locations.dart';
+import 'package:pinterest_clone/screens/log-in/sign-up/landing_page.dart';
+import 'package:pinterest_clone/screens/log-in/sign-up/sign-up-details/birthday.dart';
+import 'package:pinterest_clone/screens/log-in/sign-up/sign-up-details/email.dart';
 import 'package:pinterest_clone/screens/main_screens/search_page.dart';
+import 'package:pinterest_clone/screens/main_screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFFFCFCFC),
       ),
       //home: const TestPage(),
-      home: const SearchPage(),
+      home: const LandingPage(),
     );
   }
 }

@@ -1,81 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../widgets/navigation_bar.dart';
 
 class SearchPage extends StatelessWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF000000),
-        body: Stack(
+        backgroundColor: const Color(0xFF000000),
+        body: Column(
           children: [
-            NavigationBarWidget(selectedItem: 'search'),
-            _buildSearchContent(),
+            const SizedBox(height: 15,),
+            _buildSearchBar(),
+             const Spacer(),
+             const NavigationBarWidget(selectedItem: 'search'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSearchContent() {
-    return Column(
-      children: [
-        _buildSearchBar(),
-        Expanded(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.search,
-                    size: 50,
-                    color: Colors.white,
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Search Page',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   Widget _buildSearchBar() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
-        color: Color(0xFF292929),
-        borderRadius: BorderRadius.circular(20.0),
+        color: const Color(0xFF292929),
+        borderRadius: BorderRadius.circular(24.36),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Row(
         children: [
-          Icon(Icons.search, color: Colors.grey),
-          SizedBox(width: 10),
+          const Icon(Icons.search, color: Color(0xFF9D9D9D)),
+          const SizedBox(width: 8),
           Expanded(
             child: TextField(
-              style: TextStyle(color: Colors.grey),
+              style: GoogleFonts.inter(
+                color: const Color(0xFF9D9D9D),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
               decoration: InputDecoration(
                 hintText: 'Search Pinterest',
-                hintStyle: TextStyle(color: Colors.grey),
+                hintStyle: GoogleFonts.inter(
+                color: const Color(0xFF9D9D9D),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
                 border: InputBorder.none,
               ),
             ),
           ),
-          Icon(Icons.camera_alt, color: Colors.grey),
+          const Icon(Icons.camera_alt, color: Color(0xFF9D9D9D)),
         ],
       ),
     );
