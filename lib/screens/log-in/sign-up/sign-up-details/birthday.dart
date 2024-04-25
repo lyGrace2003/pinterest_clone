@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pinterest_clone/widgets/sign-up_navigation.dart';
 
 import '../../../../widgets/buttons.dart';
-import 'locations.dart';
+import 'gender.dart';
 
 class SignUpBirthday extends StatefulWidget {
   const SignUpBirthday({super.key});
@@ -51,7 +51,7 @@ class _SignUpBirthdayState extends State<SignUpBirthday> {
                     )
                   ),
             const Spacer(),
-            const ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red', nextPage: SignUpLocations()),
+            const ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red', nextPage: SignUpGender()),
             const SizedBox(height: 20,), 
           ],
         ),

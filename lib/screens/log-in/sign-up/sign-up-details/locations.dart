@@ -5,6 +5,7 @@ import 'package:pinterest_clone/widgets/buttons.dart';
 
 import '../../../../models/country_state_models.dart' as cs_model;
 import '../../../../models/country_state_repo.dart';
+import '../../../../widgets/sign-up_navigation.dart';
 
 class SignUpLocations extends StatefulWidget {
   const SignUpLocations({super.key});
@@ -46,9 +47,10 @@ class _SignUpLocationsState extends State<SignUpLocations> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF000000),
-      body: Stack(
+      body: Column(
         children: [
           const SizedBox(height: 50,),
+          const SignUpNavigator(selectedIndex: 4),
           Center(
             child: !isDataLoaded
                 ? const CircularProgressIndicator()
@@ -56,7 +58,7 @@ class _SignUpLocationsState extends State<SignUpLocations> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        const SizedBox(height: 100,),
+                        const SizedBox(height: 30,),
                         Text(
                           'Where do you live?',
                           style: GoogleFonts.inter(
@@ -114,19 +116,13 @@ class _SignUpLocationsState extends State<SignUpLocations> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 500),
                       ],
                     ),
                   ),
           ),
-          const Positioned(
-            left: 0,
-            right: 0,
-            bottom: 20,
-            child: Center(
-              child: ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red', nextPage: LandingPage(),),
-            ),
-          ),
+          const Spacer(),
+          const ButtonWidget(text: 'Next', textColor: 'white', buttonColor: 'red', nextPage: LandingPage()),
+          const SizedBox(height: 20,),
         ],
       ),
     );
