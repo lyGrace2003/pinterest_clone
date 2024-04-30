@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinterest_clone/screens/log-in/sign-up/sign-up-details/email.dart';
 import 'package:pinterest_clone/widgets/buttons.dart';
 import '../../../widgets/log_in_widgets.dart';
 import 'log-in_page.dart';
-import 'sign-up_page.dart';
 
 
 class LandingPage extends StatefulWidget {
