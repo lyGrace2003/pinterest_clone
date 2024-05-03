@@ -122,7 +122,8 @@ class HomeView extends StatelessWidget {
 
   /// Custom TabBar
  Widget _buildTabBar() {
-  return Center(
+  return SizedBox(
+    width: 275,
     child: ListView.builder(
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
